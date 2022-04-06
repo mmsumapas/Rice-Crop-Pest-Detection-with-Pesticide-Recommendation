@@ -21,10 +21,14 @@ The project is no longer active for development, but it is open for changes or i
 
 ## Installation 
 Step 1. Clone the repository in your raspberry pi desktop https://github.com/mmsumapas/Rice-Crop-Pest-Detection-with-Pesticide-Recommendation.git
-
-Step 2. Install the required dependencies 
+Step 2. Virtual Environment
 ```rb
+python3 -m venv venv
 source ./venv/bin/activate
+```
+
+Step 3. Install the required dependencies 
+```rb
 pip3 install pyserial
 pip3 install Flask
 pip3 install os-win
@@ -43,7 +47,7 @@ sudo apt-get update
 sudo apt-get install python3-tflite-runtime
 ```
 
-Step 3. UWSGI Setup
+Step 4. UWSGI Setup
 First remove the Log folder inside the PestDetection folder then follow each code. Run following the commands in termal
 ```rb
 source ./venv/bin/activate
@@ -61,7 +65,7 @@ cat /home/pi/Desktop/PestDetection/Log/detection_uwsgi.log
 uwsgi --ini /home/pi/Desktop/PestDetection/detection_uwsgi.ini
 ```
 
-Step 4. Start the python scripts during boot up
+Step 5. Start the python scripts during boot up
 ```rb
 sudo nano /etc/rc.local
 ```
@@ -72,10 +76,10 @@ sudo python /home/pi/Desktop/PestDetection/runSMS.py &
 sudo python /home/pi/Desktop/PestDetection/detection_uwsgi.ini 
 ```
 
-Step 5. Setup the static IP address
+Step 6. Setup the static IP address
 To steup the static IP address, follow the steps indicated in [here!](https://www.linuxscrew.com/raspberry-pi-static-ip)
 
-Step 6. Accessing the Website 
+Step 7. Accessing the Website 
 Type the IP address you specified in step 5. (Note that in order to set a detection schedule, it needs to access the website admin dashbaord)
 
 # Acknowledgement
