@@ -1,0 +1,58 @@
+{% extends 'base_template.html' %}
+{% block div %}
+<div>
+    <form class="form-control"  method="post"  action="{{ url_for('getDetection') }}" >
+        <!-- <label>
+            <h2>DETECTION SCHEDULE</h2>
+        </label> -->
+        <!-- <input class="form"  type="text" name="date" placeholder="Enter Detection Date (month-date-year)"> -->
+        <input class="form"  type="date" name="date"> <button class="btn navi" type="submit" value="submit">Submit</button>
+    </form>
+    <table class="pestdetected" style="margin-left: 5%; margin-right: 5%;">       
+        {% for hist in history %}
+        <tr>
+            <td> <h3>PEST DETECTED<h3></td>
+            <td> <h3> {{ hist[3] }} </h3></td>
+        </tr>
+            <td>SCIENTIFIC NAME</td>
+            <td>{{ hist[2] }}</td>
+        </tr>
+        <tr>
+            <td>TIME DETECTED</td>
+            <td>{{ hist[1] }}</td>
+        </tr>
+        <tr>
+            <td>SCORE</td>
+            <td>{{ hist[8] }}</td>
+        </tr>
+        <tr>
+            <td>PEST DESCRIPTION</td>
+            <td style="text-align: justify;">{{ hist[4] }}</td>
+        </tr>
+        <tr>
+            <td>
+                PESTICIDE RECOMMENDATION FOR SINGLE PEST
+            </td>
+            <td>
+                {{ hist[5] }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PESTICIDE RECOMMENDATION FOR MULTIPLE PESTS
+            </td>
+            <td>
+                {{ hist[7] }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <img width=640px height=640px src="{{ hist[6] }}">
+            </td>
+        </tr>
+        {% endfor %}   
+    </table>
+</div>
+{% endblock %}

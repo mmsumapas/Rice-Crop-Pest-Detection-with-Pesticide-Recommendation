@@ -1,0 +1,28 @@
+{% extends 'base_template.html' %}
+{% block div %}
+<div class="side"  >
+    <img width=300px height=300px src="{{ pestImage }}">
+</div>
+<div class="main">
+    <!-- <h1 style="text-align: left;">
+        PESTICIDE DETAILS
+    </h1> -->
+    <table >       
+        <form method="post" action="{{ url_for('getPestInfo') }}" >
+            <!-- <label> <h2>PESTICIDE</h2></label> -->
+            <input class="form" maxlength="50" type="text" name="pestName" placeholder="Enter Pest Name">
+        </form>
+        <tr>
+            <td> <h3>SCIENTIFIC NAME<h3></td>
+            <td> <h3>  {{ scientificName}} </h3></td>
+        </tr>
+            <td>LAYMAN'S TERM</td>
+            <td>{{ laymansTerm }}</td>
+        </tr>
+        <tr>
+            <td>DESCRIPTION</td>
+            <td style="text-align: justify;"> {{ pestDescription }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

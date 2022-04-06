@@ -1,0 +1,44 @@
+{% extends 'admin_page.html' %}
+{% block div %}
+<div class="rowThree" >
+    <h2>PESTICIDES</h2>
+    <table>
+        <tr>
+            <td><h3>ID</h3></td>
+            <td><h3>NAME</h3></td>
+            <td><h3>TYPE</h3></td>
+            <td><h3>DESCRIPTION</h3></td>
+            <td></td>
+            <td>
+                <a class="btn navi" href="{{ url_for('addPesticide') }}">
+                    Add
+                </a> 
+            </td>
+        </tr>
+        {% for pesticide in pesticides %}
+        <tr>
+            <td>{{ pesticide[0] }}</td>
+            <td>{{ pesticide[1] }}</td>
+            <td>{{ pesticide[2] }}</td>
+            <td>{{ pesticide[3] }}</td>
+            <td> 
+                <form action="{{ url_for('adminPesticide') }}" method="POST" >
+                    <button class="btn navi"  value="{{ pesticide[0] }}" type="submit"  name="Edit">
+                        Edit
+                    </button> 
+                </form>
+            </td>
+            <td> 
+                <form action="" method="POST" >
+                    <button class="btn delete" value="{{ pesticide[0] }}" type="submit" name="Delete" >
+                    Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}  
+
+    </table>
+</div>
+{% endblock %}
+

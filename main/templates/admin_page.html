@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bulma.css" />
+  </head>
+
+  <body>
+      <header>
+        <div style="width: 90%; float: left;">
+          <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">RICEFIELD PESTS MONITORING SYSTEM ADMIN DASHBOARD</h1>
+        </div>
+        <div style="width: 10%; float: left;"> 
+          <a class="back" href="{{ url_for('logout') }}" >
+            Logout
+          </a>
+        </div>
+      </header>
+      <div>
+        <table style="font-weight: bolder;">
+          <tr>
+              <td> 
+                  <a class="category" href="{{ url_for('adminDetection') }}" >
+                  DETECTION
+                  </a>
+              </td>
+              <td> 
+                  <a class="category" href="{{ url_for('adminPest') }}" >
+                  PESTS
+                  </a>
+              </td>
+              <td> 
+                  <a class="category" href="{{ url_for('adminPesticide') }}" >
+                  PESTICIDES
+                  </a>
+              </td>
+              <td> 
+                  <a class="category" href="{{ url_for('adminPesticideRecommendation') }}" >
+                  PESTICIDE RECOMMENDATIONS
+                  </a>
+              </td>
+              <td> 
+                  <a class="category" href="{{ url_for('adminInfo') }}" >
+                  ADMIN
+                  </a>
+              </td>
+              <td> 
+                <a class="category" href="{{ url_for('adminDetectionSchedule') }}" >
+                DETECTION SCHEDULE
+                </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      {% block div %}
+      {% endblock %}
+  </body>
+
+  <style>
+      *{
+          box-sizing: border-box
+      }
+      .form{
+        width: 500px;
+        height: 30px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: medium;
+      }
+      body{
+        margin: 0px;
+        padding: 10px;
+        text-align: center;
+      }
+      header , footer{
+        padding: 5px;
+        color: black;
+      }
+      section{
+          width: 50%;
+          float: left;
+          height: 500px;
+          background: gray;
+      }
+      table{
+      
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: large;
+        padding: 2px;
+        border-spacing: 50px;
+      }
+      td{
+          
+          text-align: center;
+      }
+      .category{
+        text-decoration:none;
+        color: black;
+
+      }
+      .right{
+          width: 48%;
+          float: left;
+          height: 500px;
+          background: gray;
+          border-left: 2px solid red;
+          border-radius: 10px;
+          margin-left: 2%;
+         
+      }
+      .main{
+        height: 480px;
+        margin: 10px 0px;
+      }
+      .main::after{
+        content:"";
+        clear: both;
+        display: table;
+      }
+      .hmain{
+        width: auto;
+      }
+      .hside{
+        float: right;
+      }
+      .side{
+        height: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        text-align: justify;
+      }
+      .btn {
+        display: inline-block;
+        margin: 15px;
+        padding: 1.2em 2.8em;
+        border: none;
+        border-radius: 2em;
+        outline: none;
+        color: black;
+        font-family: 'Lato', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.0rem;
+        width: 6cm;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        transition: all 150ms ease-out;
+        }
+        .selected{
+        background-color: #348cf0;
+        box-shadow: 0 0 0 0.1875rem white, 0 0 0 0.375rem #348cf0;;
+        transition-duration: 75ms
+        }
+        .btn:focus, .button:hover {
+        background-color: #348cf0;
+        box-shadow: 0 0 0 0.1875rem white, 0 0 0 0.375rem #348cf0;;
+        }
+        .btn:active {
+        background-color: #348cf0;
+        box-shadow: 0 0 0 0.1875rem #348cf0, 0 0 0 0.375rem #348cf0;
+        transition-duration: 75ms;
+        }
+        .first {
+        border-color: #348cf0;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #348cf0 inset, 0 0 0 0 #348cf0;
+        transition: all 150ms ease-in-out;
+        }
+        .navi {
+        border-color: #348cf0;
+        color: #fff;
+        box-shadow: 0 0 40px 40px #348cf0 inset, 0 0 0 0 #348cf0;
+        transition: all 150ms ease-in-out;
+        width: 3cm;
+        text-align: center;
+        margin: 5px;
+        padding: 1.2em 1.2em;
+        }
+        .back{
+        width: 200px;
+        float:center;
+        color: black;
+        margin: 0px;
+        font-size: 1rem;
+        }
+        .delete{
+        width: 3cm;
+        float:center;
+        color: black;
+        text-align: center;
+        margin: 5px;
+        padding: 1.2em 1.2em;
+        }
+     
+     
+
+      body{
+        background:#f3f3f3;
+        background-size: cover;
+        font-family: 'Lato', sans-serif;
+        color: black;
+      }
+  </style>
+</html>

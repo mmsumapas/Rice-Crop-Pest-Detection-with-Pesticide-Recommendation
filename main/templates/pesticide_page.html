@@ -1,0 +1,26 @@
+{% extends 'base_template.html' %}
+{% block div %}
+<div>
+    <table style="margin-left: 5%; margin-right: 5%">       
+        <form method="post" action="{{ url_for('getPesticides') }}" >
+            <!-- <label> <h2>PESTICIDE</h2></label> -->
+            <input class="form" maxlength="50" type="text" name="Pesticide" placeholder="Enter Pesticide Name">
+        </form>
+        <tr>
+            <td> <h3>PESTICIDE NAME<h3></td>
+            <td> <h3>  {{ pesticideName }} </h3></td>
+        </tr>
+            <td>PESTICIDE TYPE</td>
+            <td>{{ pesticideType }}</td>
+        </tr>
+        <tr>
+            <td>PESTICDE DESCRIPTION</td>
+            <td style="text-align: justify;"> {{ pesticideDescription }}</td>
+        </tr>
+        <tr>
+            <td>PESTS APPLICABLE</td>
+            <td > {{ pests }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

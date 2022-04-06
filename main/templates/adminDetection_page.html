@@ -1,0 +1,25 @@
+{% extends 'admin_page.html' %}
+{% block div %}
+<div class="rowThree" >
+    <h2>DETECTIONS</h2>
+    <table>
+        <tr>
+            <td><h3>ID</h3></td>
+            <td><h3>DATE</h3></td>
+            <td><h3>TIME</h3></td>
+            <td><h3>SCORE</h3></td>
+            <td><H3>PEST ID</H3></td>
+        </tr>
+        {% for detect in detections %}
+        <tr>
+            <td>{{ detect[0] }}</td>
+            <td>{{ detect[1] }}</td>
+            <td>{{ detect[2] }}</td>
+            <td>{{ detect[5] }}</td>
+            <td>{{ detect[3] }}</td>
+        </tr>
+        {% endfor %}  
+
+    </table>
+</div>
+{% endblock %}

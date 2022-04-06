@@ -1,0 +1,29 @@
+{% extends 'admin_page.html' %}
+{% block div %}
+<div class="rowThree" >
+    <h2>DETECTION SCHEDULE</h2>
+    <table>
+        <tr>
+            <td><h3>FIRST DETECTION SCHEDULE</h3></td>
+            <td><h3>SECOND DETECTION SCHEDULE</h3></td>
+            <td><h3>THIRD DETECTION SCHEDULE</h3></td>
+            <td><h3>FOURTH DETECTION SCHEDULE</h3></td>
+            <td><h3>FIFTH DETECTION SCHEDULE</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{ firstDetectionSchedule }}</td>
+            <td>{{ secondDetectionSchedule }}</td>
+            <td>{{ thirdDetectionSchedule }}</td>
+            <td>{{ fourthDetectionSchedule }}</td>
+            <td>{{ fifthDetectionSchedule }}</td>
+            <td>
+                <a class="btn navi" href="{{ url_for('editAdminDetectionSchedule') }}">
+                    Edit
+                </a> 
+            </td>
+        </tr>
+
+    </table>
+</div>
+{% endblock %}

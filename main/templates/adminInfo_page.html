@@ -1,0 +1,25 @@
+{% extends 'admin_page.html' %}
+{% block div %}
+<div class="rowThree" >
+    <h2>ADMIN DETAILS</h2>
+    <table>
+        <tr>
+            <td><h3>USERNAME</h3></td>
+            <td><h3>PASSWORD</h3></td>
+            <td><h3>PHONE NUMBER TO SEND GSM</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{ username }}</td>
+            <td>{{ password }}</td>
+            <td>{{ phone_number }}</td>
+            <td>
+                <a class="btn navi" href="{{ url_for('editAdminInfo') }}">
+                    Edit
+                </a> 
+            </td>
+        </tr>
+
+    </table>
+</div>
+{% endblock %}

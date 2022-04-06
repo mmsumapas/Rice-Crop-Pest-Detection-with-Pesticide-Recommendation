@@ -1,0 +1,15 @@
+terminal:
+to access python shell enter : python3
+to import db enter: from app import db
+to create db: db.create_all()
+to import Pest class: from app import Pest
+To create new item in the database:
+pest1 = Pest(scientificName="Sample Scientific Name", laymansTerm="Sample Laymans Term")
+db.session.add(pest1)
+db.session.commit()
+Pest.query.all()
+
+antidustfacemask
+hazefacemask
+kf94
+surgicalmask
